@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survivor Pool Standings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Survivor Pool Standings</h1>
+    <table id="standings">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Day 1</th>
+                <th>Day 2</th>
+                <th>Day 3</th>
+                <!-- Add more columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- This is where the standings will be dynamically inserted -->
+        </tbody>
+    </table>
+
+    <!-- You can add more HTML elements or scripts as needed -->
+
+    <script>
+        // This is where your JavaScript code will go
+        // You'll fetch data and update the standings dynamically
+        // For now, let's create a mock function to populate the standings
+        function populateStandings() {
+            const standingsData = [
+                { user: 'User1', day1: 'W', day2: 'W', day3: 'L' },
+                { user: 'User2', day1: 'W', day2: 'L', day3: 'W' },
+                // Add more rows as needed
+            ];
+
+            const tbody = document.querySelector('#standings tbody');
+            tbody.innerHTML = '';
+
+            standingsData.forEach(rowData => {
+                const row = document.createElement('tr');
+                Object.values(rowData).forEach(value => {
+                    const cell = document.createElement('td');
+                    cell.textContent = value;
+                    row.appendChild(cell);
+                });
+                tbody.appendChild(row);
+            });
+        }
+
+        // Call the function to populate standings on page load
+        window.onload = populateStandings;
+    </script>
+</body>
+</html>
