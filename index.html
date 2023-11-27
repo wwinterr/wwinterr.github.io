@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
+            margin: 20px;
             padding: 0;
             display: grid;
             grid-template-columns: auto 1fr;
@@ -47,11 +47,23 @@
         th {
             background-color: #555;
         }
+
+        /* Media Query for smaller screens (max-width: 768px) */
+        @media only screen and (max-width: 768px) {
+            body {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                margin: 0;
+            }
+        }
+        
     </style>
 </head>
 <body>
     <section>
-        <h2>Overall Wins/Losses Leaderboard</h2>
+        <h2>Season Leaderboard</h2>
         <table>
             <thead>
                 <tr>
@@ -78,11 +90,11 @@
     </section>
 
     <section>
-        <h2>People Still In the Pool</h2>
+        <h2>Chopping Block</h2>
         <!-- Add content for people still in the pool -->
         <p>User1, User2, User3</p>
 
-        <h2>User Picks for Each Game</h2>
+        <h2>This Week's Picks</h2>
         <table>
             <thead>
                 <tr>
