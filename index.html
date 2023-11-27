@@ -8,10 +8,18 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto;
+            gap: 20px;
+        }
+        section {
+            border: 1px solid #dddddd;
+            padding: 10px;
         }
         table {
-            border-collapse: collapse;
             width: 100%;
+            border-collapse: collapse;
         }
         th, td {
             border: 1px solid #dddddd;
@@ -24,51 +32,70 @@
     </style>
 </head>
 <body>
-    <h1>Survivor Pool Standings</h1>
-    <table id="standings">
-        <thead>
-            <tr>
-                <th>User</th>
-                <th>Day 1</th>
-                <th>Day 2</th>
-                <th>Day 3</th>
-                <!-- Add more columns as needed -->
-            </tr>
-        </thead>
-        <tbody>
-            <!-- This is where the standings will be dynamically inserted -->
-        </tbody>
-    </table>
+    <section>
+        <h2>Overall Wins/Losses Leaderboard</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Add rows for overall wins/losses -->
+                <tr>
+                    <td>User1</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>User2</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </section>
 
-    <!-- You can add more HTML elements or scripts as needed -->
+    <section>
+        <h2>People Still in the Pool</h2>
+        <!-- Add content for people still in the pool -->
+        <p>User1, User2, User3</p>
+    </section>
 
-    <script>
-        // This is where your JavaScript code will go
-        // You'll fetch data and update the standings dynamically
-        // For now, let's create a mock function to populate the standings
-        function populateStandings() {
-            const standingsData = [
-                { user: 'User1', day1: 'W', day2: 'W', day3: 'L' },
-                { user: 'User2', day1: 'W', day2: 'L', day3: 'W' },
-                // Add more rows as needed
-            ];
-
-            const tbody = document.querySelector('#standings tbody');
-            tbody.innerHTML = '';
-
-            standingsData.forEach(rowData => {
-                const row = document.createElement('tr');
-                Object.values(rowData).forEach(value => {
-                    const cell = document.createElement('td');
-                    cell.textContent = value;
-                    row.appendChild(cell);
-                });
-                tbody.appendChild(row);
-            });
-        }
-
-        // Call the function to populate standings on page load
-        window.onload = populateStandings;
-    </script>
+    <section>
+        <h2>User Picks for Each Game</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Game 1</th>
+                    <th>Game 2</th>
+                    <th>Game 3</th>
+                    <!-- Add columns for each game -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Add rows for user picks -->
+                <tr>
+                    <td>User1</td>
+                    <td>TeamA</td>
+                    <td>TeamB</td>
+                    <td>TeamA</td>
+                    <!-- Add more columns for each game -->
+                </tr>
+                <tr>
+                    <td>User2</td>
+                    <td>TeamB</td>
+                    <td>TeamA</td>
+                    <td>TeamB</td>
+                    <!-- Add more columns for each game -->
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </section>
 </body>
 </html>
